@@ -1,0 +1,70 @@
+# Evaluation report
+
+* **Date:** 2026-11-11 04:28
+* **Model:** groq / openai/gpt-oss-120b
+* **Dataset:** sales.csv (500 rows)
+* **Questions:** 25, with correct answers computed independently using pandas
+
+## Headline results
+
+|Measure|Result|
+|-|-|
+|Correct answers (all questions)|25 of 25 (100.0%)|
+|Correct answers (answerable questions)|100.0%|
+|Unanswerable questions handled honestly|100.0%|
+|Right analysis tool chosen|100.0%|
+|Answers produced without failure|100.0%|
+|Numbers in answers matched to a calculation|100.0% of 165|
+|Answers where every number verified|100.0%|
+|Answers still carrying unverified numbers|0|
+|Runs that needed a retry or rewrite|0.0%|
+|Response time (mean / median / slowest 5%)|6.01 s / 4.83 s / 16.27 s|
+
+## By question type
+
+|Type|Questions|Correct|Accuracy|
+|-|-|-|-|
+|aggregation|7|7|100.0%|
+|comparison|3|3|100.0%|
+|ranking|2|2|100.0%|
+|correlation|1|1|100.0%|
+|outliers|2|2|100.0%|
+|trend|3|3|100.0%|
+|descriptive|3|3|100.0%|
+|chart|1|1|100.0%|
+|unanswerable|3|3|100.0%|
+
+## Every question
+
+|ID|Question|Correct|Right tool|Numbers verified|Time|
+|-|-|-|-|-|-|
+|A1|Which region has the highest total revenue?|Yes|Yes|4/4|2.05 s|
+|A2|Which region has the lowest total revenue?|Yes|Yes|10/10|2.16 s|
+|A3|Which product sells the most units on average per order?|Yes|Yes|5/5|2.29 s|
+|A4|What is the average revenue per order?|Yes|n/a|6/6|1.53 s|
+|A5|How many orders does each region have?|Yes|Yes|8/8|1.8 s|
+|A6|Which product earns the most total revenue?|Yes|Yes|5/5|1.89 s|
+|A7|What is the total revenue from Laptop orders?|Yes|Yes|6/6|1.67 s|
+|C1|How much higher is North revenue than South revenue, in percent?|Yes|Yes|5/5|1.77 s|
+|C2|Compare total revenue of Phone and Tablet. How many percent higher is Phone?|Yes|Yes|5/5|2.04 s|
+|C3|By what percent is the average units per order in East higher than in West?|Yes|Yes|5/5|8.58 s|
+|R1|Show the three biggest orders by revenue.|Yes|Yes|6/6|4.18 s|
+|R2|What is the smallest order by revenue?|Yes|Yes|3/3|3.77 s|
+|K1|Are units and revenue correlated?|Yes|Yes|9/9|8.03 s|
+|O1|Are there any unusual revenue values?|Yes|Yes|10/10|6.75 s|
+|O2|Are there any unusual units values?|Yes|Yes|7/7|8.36 s|
+|T1|How did quarterly revenue change from the first to the last complete quarter, in percent?|Yes|Yes|6/6|8.91 s|
+|T2|Which complete month had the highest revenue, and how much was it?|Yes|Yes|16/16|20.36 s|
+|T3|What was the total revenue in 2025?|Yes|Yes|12/12|4.98 s|
+|D1|Give me an overview of this dataset.|Yes|n/a|11/11|7.23 s|
+|D2|Are there any missing values?|Yes|n/a|3/3|6.36 s|
+|D3|What columns does the dataset have?|Yes|n/a|3/3|8.8 s|
+|G1|Show a bar chart of total revenue by region.|Yes|Yes|4/4|4.83 s|
+|U1|What is the profit margin of each product?|Yes|n/a|8/8|11.34 s|
+|U2|Which customer spent the most money?|Yes|n/a|3/3|4.27 s|
+|U3|Forecast the revenue for next quarter.|Yes|n/a|5/5|16.27 s|
+
+## What went wrong
+
+Every question was answered correctly.
+

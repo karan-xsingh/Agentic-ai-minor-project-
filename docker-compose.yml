@@ -1,0 +1,14 @@
+# Start everything with:  docker compose up --build      then open http://localhost:8000
+# Your LLM settings come from backend/.env (copy backend/.env.example to backend/.env first).
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - analyst-data:/data        # uploaded files and history survive restarts
+
+volumes:
+  analyst-data:

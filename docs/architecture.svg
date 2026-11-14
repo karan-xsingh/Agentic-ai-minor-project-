@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#1c2433"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="640" fill="#ffffff"/>
+
+  <text x="30" y="38" font-size="20" font-weight="700" fill="#1c2433">Agentic Data Analyst: architecture</text>
+
+  <!-- ===== system overview ===== -->
+  <text x="30" y="72" font-size="13" font-weight="600" fill="#5b6578">SYSTEM</text>
+
+  <rect x="30" y="86" width="190" height="86" rx="10" fill="#eef1fb" stroke="#2c4fa3" stroke-width="1.5"/>
+  <text x="125" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#1c2433">React + Vite UI</text>
+  <text x="125" y="140" text-anchor="middle" font-size="12" fill="#5b6578">upload, ask, charts,</text>
+  <text x="125" y="156" text-anchor="middle" font-size="12" fill="#5b6578">evidence, report download</text>
+
+  <rect x="290" y="86" width="190" height="86" rx="10" fill="#eef1fb" stroke="#2c4fa3" stroke-width="1.5"/>
+  <text x="385" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#1c2433">FastAPI backend</text>
+  <text x="385" y="140" text-anchor="middle" font-size="12" fill="#5b6578">validates files, runs the agent,</text>
+  <text x="385" y="156" text-anchor="middle" font-size="12" fill="#5b6578">stores history, builds reports</text>
+
+  <rect x="550" y="86" width="190" height="86" rx="10" fill="#eef1fb" stroke="#2c4fa3" stroke-width="1.5"/>
+  <text x="645" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#1c2433">LangGraph agent</text>
+  <text x="645" y="140" text-anchor="middle" font-size="12" fill="#5b6578">plans, runs tools, writes,</text>
+  <text x="645" y="156" text-anchor="middle" font-size="12" fill="#5b6578">verifies (workflow below)</text>
+
+  <rect x="790" y="86" width="180" height="86" rx="10" fill="#f4f6f2" stroke="#a7afa0" stroke-width="1.5"/>
+  <text x="880" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#1c2433">LLM provider</text>
+  <text x="880" y="140" text-anchor="middle" font-size="12" fill="#5b6578">Groq, Gemini, OpenAI</text>
+  <text x="880" y="156" text-anchor="middle" font-size="12" fill="#5b6578">or local Ollama</text>
+
+  <rect x="290" y="214" width="190" height="70" rx="10" fill="#f4f6f2" stroke="#a7afa0" stroke-width="1.5"/>
+  <text x="385" y="244" text-anchor="middle" font-size="15" font-weight="700" fill="#1c2433">SQLite + files</text>
+  <text x="385" y="264" text-anchor="middle" font-size="12" fill="#5b6578">datasets, history, evidence</text>
+
+  <rect x="550" y="214" width="190" height="70" rx="10" fill="#dcf0e5" stroke="#176b4d" stroke-width="1.5"/>
+  <text x="645" y="244" text-anchor="middle" font-size="15" font-weight="700" fill="#1c2433">Approved tools</text>
+  <text x="645" y="264" text-anchor="middle" font-size="12" fill="#5b6578">Pandas, NumPy, Plotly</text>
+
+  <line x1="220" y1="129" x2="288" y2="129" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="480" y1="129" x2="548" y2="129" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="740" y1="129" x2="788" y2="129" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="385" y1="172" x2="385" y2="212" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="645" y1="172" x2="645" y2="212" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="654" y="198" font-size="11" fill="#5b6578">numbers come only from here</text>
+  <text x="394" y="198" font-size="11" fill="#5b6578">save and load</text>
+  <text x="753" y="122" font-size="11" fill="#5b6578">plan, write</text>
+
+  <!-- ===== agent workflow ===== -->
+  <line x1="30" y1="318" x2="970" y2="318" stroke="#d6dbd2"/>
+  <text x="30" y="350" font-size="13" font-weight="600" fill="#5b6578">AGENT WORKFLOW (LangGraph)</text>
+
+  <rect x="30" y="378" width="120" height="64" rx="10" fill="#f4f6f2" stroke="#a7afa0" stroke-width="1.5"/>
+  <text x="90" y="406" text-anchor="middle" font-size="14" font-weight="700" fill="#1c2433">Profile</text>
+  <text x="90" y="425" text-anchor="middle" font-size="11.5" fill="#5b6578">dataset summary</text>
+
+  <rect x="205" y="378" width="120" height="64" rx="10" fill="#eef1fb" stroke="#2c4fa3" stroke-width="1.5"/>
+  <text x="265" y="406" text-anchor="middle" font-size="14" font-weight="700" fill="#1c2433">Plan</text>
+  <text x="265" y="425" text-anchor="middle" font-size="11.5" fill="#5b6578">LLM picks tools</text>
+
+  <rect x="380" y="378" width="120" height="64" rx="10" fill="#dcf0e5" stroke="#176b4d" stroke-width="1.5"/>
+  <text x="440" y="406" text-anchor="middle" font-size="14" font-weight="700" fill="#1c2433">Execute</text>
+  <text x="440" y="425" text-anchor="middle" font-size="11.5" fill="#5b6578">code runs the tools</text>
+
+  <rect x="555" y="378" width="120" height="64" rx="10" fill="#eef1fb" stroke="#2c4fa3" stroke-width="1.5"/>
+  <text x="615" y="406" text-anchor="middle" font-size="14" font-weight="700" fill="#1c2433">Report</text>
+  <text x="615" y="425" text-anchor="middle" font-size="11.5" fill="#5b6578">LLM writes answer</text>
+
+  <rect x="730" y="378" width="140" height="64" rx="10" fill="#dcf0e5" stroke="#176b4d" stroke-width="2.4"/>
+  <text x="800" y="406" text-anchor="middle" font-size="14" font-weight="700" fill="#1c2433">Verify</text>
+  <text x="800" y="425" text-anchor="middle" font-size="11.5" fill="#5b6578">plain code, no LLM</text>
+
+  <rect x="905" y="378" width="65" height="64" rx="10" fill="#ffffff" stroke="#1c2433" stroke-width="1.5"/>
+  <text x="937" y="415" text-anchor="middle" font-size="14" font-weight="700" fill="#1c2433">Answer</text>
+
+  <line x1="150" y1="410" x2="203" y2="410" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="325" y1="410" x2="378" y2="410" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="500" y1="410" x2="553" y2="410" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="675" y1="410" x2="728" y2="410" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="870" y1="410" x2="903" y2="410" stroke="#1c2433" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- retry loop: execute back to plan -->
+  <path d="M440 442 V478 H265 V444" fill="none" stroke="#a8321e" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="352" y="498" text-anchor="middle" font-size="11.5" fill="#a8321e">a tool failed: re-plan (up to 2 times)</text>
+
+  <!-- rewrite loop: verify back to report -->
+  <path d="M800 442 V530 H615 V444" fill="none" stroke="#a8321e" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="707" y="550" text-anchor="middle" font-size="11.5" fill="#a8321e">a number does not match: rewrite once,</text>
+  <text x="707" y="566" text-anchor="middle" font-size="11.5" fill="#a8321e">then flag anything still unverified</text>
+
+  <!-- notes -->
+  <text x="30" y="500" font-size="12" fill="#5b6578">The LLM only chooses</text>
+  <text x="30" y="516" font-size="12" fill="#5b6578">from a fixed list of tools.</text>
+  <text x="30" y="532" font-size="12" fill="#5b6578">It never writes or runs code.</text>
+
+  <text x="30" y="610" font-size="12" fill="#5b6578">Green boxes are ordinary code. Blue boxes call the LLM. Red dashed lines are the safety loops.</text>
+</svg>

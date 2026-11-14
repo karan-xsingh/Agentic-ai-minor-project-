@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "date": "2026-11-09 03:50",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "dataset": "sales.csv",
+    "rows": 500
+  },
+  "summary": {
+    "cases": 3,
+    "correct": 3,
+    "accuracy_pct": 100.0,
+    "answerable_accuracy_pct": 100.0,
+    "unanswerable_handled_pct": null,
+    "tool_selection_pct": 100.0,
+    "execution_success_pct": 100.0,
+    "numbers_checked": 18,
+    "numbers_verified_pct": 100.0,
+    "fully_verified_answers_pct": 100.0,
+    "answers_with_unverified_numbers": 0,
+    "retried_runs_pct": 0.0,
+    "latency_mean_s": 2.23,
+    "latency_median_s": 2.19,
+    "latency_p95_s": 2.43,
+    "by_category": {
+      "aggregation": {
+        "cases": 1,
+        "correct": 1,
+        "accuracy_pct": 100.0
+      },
+      "comparison": {
+        "cases": 1,
+        "correct": 1,
+        "accuracy_pct": 100.0
+      },
+      "trend": {
+        "cases": 1,
+        "correct": 1,
+        "accuracy_pct": 100.0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "A1",
+      "category": "aggregation",
+      "question": "Which region has the highest total revenue?",
+      "refusal": false,
+      "status": "ok",
+      "correct": true,
+      "tool_ok": true,
+      "answered": true,
+      "missing_numbers": [],
+      "missing_phrases": [],
+      "numbers_total": 9,
+      "numbers_verified": 9,
+      "citation_coverage": 1.0,
+      "attempts": 1,
+      "report_attempts": 1,
+      "tools_run": [
+        "group_aggregate",
+        "top_n"
+      ],
+      "report": "North has the highest total revenue.  \n\n- Total revenue by region: North\u202f45637708.0, East\u202f39873579.0, South\u202f34889018.0, West\u202f16047753.0 [E:da7f2d02]  \n- Overall revenue statistics: mean\u202f272896.116, std\u202f267297.2677, min\u202f9316.0, max\u202f2500000.0 [E:9c9251a1]  \n- The single highest individual revenue record is\u202f2500000.0 [E:1a422a1e]",
+      "seconds": 2.19,
+      "error": null
+    },
+    {
+      "id": "C1",
+      "category": "comparison",
+      "question": "How much higher is North revenue than South revenue, in percent?",
+      "refusal": false,
+      "status": "ok",
+      "correct": true,
+      "tool_ok": true,
+      "answered": true,
+      "missing_numbers": [],
+      "missing_phrases": [],
+      "numbers_total": 5,
+      "numbers_verified": 5,
+      "citation_coverage": 1.0,
+      "attempts": 1,
+      "report_attempts": 1,
+      "tools_run": [
+        "compare_groups"
+      ],
+      "report": "North revenue is 30.8082% higher than South revenue. [E:efcf09d1]\n\n- Total North revenue: 45637708.0. [E:efcf09d1]  \n- Total South revenue: 34889018.0. [E:efcf09d1]  \n- Absolute revenue difference: 10748690.0. [E:efcf09d1]  \n- Revenue ratio (North\u202f/\u202fSouth): 1.3081. [E:efcf09d1]",
+      "seconds": 2.07,
+      "error": null
+    },
+    {
+      "id": "T1",
+      "category": "trend",
+      "question": "How did quarterly revenue change from the first to the last complete quarter, in percent?",
+      "refusal": false,
+      "status": "ok",
+      "correct": true,
+      "tool_ok": true,
+      "answered": true,
+      "missing_numbers": [],
+      "missing_phrases": [],
+      "numbers_total": 4,
+      "numbers_verified": 4,
+      "citation_coverage": 1.0,
+      "attempts": 1,
+      "report_attempts": 1,
+      "tools_run": [
+        "trend_over_time"
+      ],
+      "report": "Quarterly revenue fell by -23.01% from the first to the last complete quarter. [E:40edfe16]\n\n- 2025Q1 revenue was 26723001.0 (first complete quarter) [E:40edfe16]  \n- 2026Q1 revenue was 20574193.0 (last complete quarter) [E:40edfe16]  \n- The absolute change was -6148808.0 (decrease) [E:40edfe16]  \n- Partial periods such as 2026Q2 are incomplete [E:40edfe16]",
+      "seconds": 2.43,
+      "error": null
+    }
+  ]
+}
